@@ -16,7 +16,6 @@
  : 테스트 레스트 추가 : http://localhost:8080/greeting
 
 # 채크 포인트 
-- [ ] gradle, [ ] rest 
-- [] 추가 restfull
-- [X] 마이바티스
+- [ ] 마이바티스 테스트 추가 
+- [ ] 데이블 업데이트 확인 후 추가 
 
