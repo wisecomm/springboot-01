@@ -16,10 +16,6 @@
 - [ ] 마이바티스 테스트 추가 
 - [ ] 데이블 업데이트 확인 후 추가 
 
-??? 로그 디렉토리 도커 볼륨에 연결 
-https://non-stop.tistory.com/748
-
-
 # 도커 만들기 (스프링 부트)
 - 도커파일 만듬 : Dockerfile, 
   : 도커 실행(맥) :  docker build . -t spring-01-0.0.1.jar --platform linux/amd64
