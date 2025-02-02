@@ -10,7 +10,7 @@
 
 ## 확인 필요
 - DB 테이블 업그레이드 테스트 (기존 소스 확인 후 빌드 및 환경 확인)
- : 테스트 레스트 추가 : http://localhost:8080/greeting
+ > 테스트 레스트 추가 : http://localhost:8080, http://localhost:8080/greeting
 
 # 채크 포인트 
 - [ ] 마이바티스 테스트 추가 
