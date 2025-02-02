@@ -20,5 +20,7 @@
 - 도커파일 만듬 : Dockerfile 파일 확인, 
   > 도커 실행(맥) :  docker build -t simple-spring-boot-app . --platform linux/amd64
   > 도커 데스크탑 image 에 생성되었는지 확인 
-        
 
+- 도커 이미지 파일 추출 후 다른 서버에 등록 ( 기존 파일보다 크지네 ㅎㅎㅎ )
+ > 도커 이미지 저장 : docker save -o xx.tar simple-spring-boot-app         
+ > 도커 이미지 로드 : docker load -i xx.tar 
