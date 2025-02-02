@@ -1,5 +1,4 @@
 # 스프링 부트 초기 환경 
-
 > 하루에 1번, 11분 tutorial - Github repository 관리
 
 - 스프링 부트 프로젝트 생성 : https://start.spring.io/
