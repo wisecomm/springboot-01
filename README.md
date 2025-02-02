@@ -5,7 +5,7 @@
  : dependence ( Lombok, Spring Web, MyBatis Framework, PostgreSQL Driver )
 
 - 사용 라이브러리 
-  - Lombok, Spring Data JPA, MyBatis Framework, PostgreSQL Driver
+  - Lombok, MyBatis Framework, PostgreSQL Driver
 
 
 ## 확인 필요
