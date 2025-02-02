@@ -18,7 +18,7 @@
 
 # 도커 만들기 (스프링 부트)
 - 도커파일 만듬 : Dockerfile 파일 확인, 
-  > 도커 실행(맥) :  docker build . -t spring-01-0.0.1.jar --platform linux/amd64
+  > 도커 실행(맥) :  docker build -t simple-spring-boot-app . --platform linux/amd64
   > 도커 데스크탑 image 에 생성되었는지 확인 
         
 
