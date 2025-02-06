@@ -6,15 +6,11 @@
 - 사용 라이브러리
   - Lombok, MyBatis Framework, PostgreSQL Driver
 
-## 확인 필요
+- 정상 실행 확인
+  > 테스트 레스트 확인 : http://localhost:8080, http://localhost:8080/greeting
 
-- DB 테이블 업그레이드 테스트 (기존 소스 확인 후 빌드 및 환경 확인)
-  > 테스트 레스트 추가 : http://localhost:8080, http://localhost:8080/greeting
-
-# 도커 만들기 (스프링 부트)
-
+# 도커 만들기 (스프링 부트)  : 현재는 이 부분 사용하지 않고 jar 복사로 사용함
 - 도커파일 만듬 : Dockerfile 파일 확인,
-
   > 도커 실행(맥) : docker build -t simple-spring-boot-app . --platform linux/amd64
   > 도커 데스크탑 image 에 생성되었는지 확인
 
