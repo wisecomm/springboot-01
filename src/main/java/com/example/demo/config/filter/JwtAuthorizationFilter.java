@@ -143,7 +143,9 @@ private boolean isWhitelistedPath(String requestURI) {
     // 와일드카드 경로 매칭
     for (String whitelistedUrl : WHITELIST_URLS) {
         if (whitelistedUrl.endsWith("/**")) {
-            String prefix = whitelistedUrl.substring(0, whitelistedUrl.length() - 2);
+            String prefix = whitelistedUrl.substring(0, whitelistedUrl.length() - 3);
+            log.info("prefix : {}", prefix);
+            log.info("requestURI : {}", requestURI);
             if (requestURI.startsWith(prefix)) {
                 return true;
             }

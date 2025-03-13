@@ -3,9 +3,12 @@ package com.example.demo.config;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 /*
@@ -25,13 +28,19 @@ public class SwaggerConfig {
 
 @Configuration
 public class SwaggerConfig {
+        @Value("${spring.application.name}")
+        private String applicationName;
+    
+        @Value("${spring.application.version}")
+        private String applicationVersion;
+    
     @Bean
     public OpenAPI openAPI() {
 
-        Info info = new Info()
-                .version("v1.0.0")
-                .title("API TEST")
-                .description("연습용");
+        Info info = new Info().title(applicationName)
+                        .description("description")
+                        .version(applicationVersion)
+                        .license(new License().name("Apache 2.0").url("http://springdoc.org"));
 
         // SecuritySecheme명
         String jwtSchemeName = "jwtAuth";
