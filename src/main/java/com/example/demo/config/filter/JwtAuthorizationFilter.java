@@ -144,8 +144,6 @@ private boolean isWhitelistedPath(String requestURI) {
     for (String whitelistedUrl : WHITELIST_URLS) {
         if (whitelistedUrl.endsWith("/**")) {
             String prefix = whitelistedUrl.substring(0, whitelistedUrl.length() - 3);
-            log.info("prefix : {}", prefix);
-            log.info("requestURI : {}", requestURI);
             if (requestURI.startsWith(prefix)) {
                 return true;
             }
