@@ -52,7 +52,7 @@ dependencies {
     implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'                                // DataType Converter
     implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVer}"                  // Jackson Data Binding
     implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jacksonVer}"     // Jackson DatabindFormat Yaml
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
 
     // [compile & runtime & test]
     compileOnly 'org.projectlombok:lombok'

@@ -13,11 +13,9 @@ spring:
   #   redis:
   #     host: localhost
   #     port: 6379
-
-springdoc:
   # swagger-ui
   swagger-ui:
-    enabled: true
+    enabled: false
 
 # Spring Boot Log4j2 Configuration
 logging:

@@ -42,15 +42,18 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             "/api/v1/user/login",
             "/api/v1/token/token",
             "/user/login",
-            "/token/token"
+            "/token/token",
+            "/swagger-ui/**",
+            "/v3/api-docs/**"
     );
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain chain)
             throws IOException, ServletException {
 
+        String requestURI = request.getRequestURI();
         // [STEP1] 토큰이 필요하지 않는 API 호출 발생 혹은 토큰이 필요없는 HTTP Method OPTIONS 호출 시 : 아래 로직 처리 없이 다음 필터로 이동
-        if (WHITELIST_URLS.contains(request.getRequestURI()) || HTTP_METHOD_OPTIONS.equalsIgnoreCase(request.getMethod())) {
+        if (isWhitelistedPath(requestURI) || HTTP_METHOD_OPTIONS.equalsIgnoreCase(request.getMethod())) {
             chain.doFilter(request, response);
             return;     // 종료
         }
@@ -124,6 +127,31 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
         }
     }
 
+
+/**
+ * 화이트리스트에 등록된 경로인지 확인합니다.
+ * 
+ * @param requestURI 요청 URI
+ * @return 화이트리스트 경로이면 true, 아니면 false
+ */
+private boolean isWhitelistedPath(String requestURI) {
+    // 정확한 경로 매칭
+    if (WHITELIST_URLS.contains(requestURI)) {
+        return true;
+    }
+    
+    // 와일드카드 경로 매칭
+    for (String whitelistedUrl : WHITELIST_URLS) {
+        if (whitelistedUrl.endsWith("/**")) {
+            String prefix = whitelistedUrl.substring(0, whitelistedUrl.length() - 2);
+            if (requestURI.startsWith(prefix)) {
+                return true;
+            }
+        }
+    }
+    
+    return false;
+}    
 
     /**
      * JWT 내에 Exception 발생 시 JSON 형태의 예외 응답값을 구성하는 메서드
