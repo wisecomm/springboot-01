@@ -40,8 +40,6 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-log4j2"             // Spring Boot Log4j2
     implementation "org.springframework.boot:spring-boot-starter-security"           // Spring Boot Security
 
-//    implementation 'org.springframework.boot:spring-boot-starter-validation'
-
      // [OpenSource]
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'                  // MyBatis
     implementation 'io.jsonwebtoken:jjwt:0.12.6'                                                // JSON-WEB-TOKEN
