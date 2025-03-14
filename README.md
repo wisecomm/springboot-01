@@ -10,6 +10,6 @@
 - 정상 실행 확인
   > 테스트 레스트 확인 : http://localhost:8080, http://localhost:8080/greeting
 
-# gradle --> buildJar 실행 후 만든 jar 복사
+# DB schema 생성
 
-WebSecurityConfig 6점대 버전으로 변경
+create schema test_scma authorization postgres;

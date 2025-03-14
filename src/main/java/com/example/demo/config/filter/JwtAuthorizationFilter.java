@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -143,7 +144,10 @@ private boolean isWhitelistedPath(String requestURI) {
     // 와일드카드 경로 매칭
     for (String whitelistedUrl : WHITELIST_URLS) {
         if (whitelistedUrl.endsWith("/**")) {
-            String prefix = whitelistedUrl.substring(0, whitelistedUrl.length() - 3);
+            String prefix = whitelistedUrl.substring(0, whitelistedUrl.length() - 2);
+            if(prefix.endsWith("/")) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+            }
             if (requestURI.startsWith(prefix)) {
                 return true;
             }
