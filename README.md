@@ -13,3 +13,9 @@
 # DB schema 생성
 
 create schema test_scma authorization postgres;
+
+# 참조 사이트
+
+- token 관련
+  https://adjh54.tistory.com/577
+- acc token 기간만료 --> ref token 확인 후 ( acc 생성 후 전송, (클라이언트 처리는 ???) ), 리프레쉬 token 은 재 생성하지 않음(로그인 요청)
