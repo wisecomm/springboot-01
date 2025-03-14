@@ -1,5 +1,7 @@
 package com.example.demo.config.filter;
 
+import com.example.demo.common.exception.GError;
+import com.example.demo.common.exception.GException;
 import com.example.demo.common.utils.TokenUtils;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.dto.ValidTokenDto;
@@ -45,7 +47,8 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             "/user/login",
             "/token/token",
             "/swagger-ui/**",
-            "/v3/api-docs/**"
+            "/v3/api-docs/**",
+            "/greeting"
     );
 
     @Override
@@ -178,13 +181,13 @@ private boolean isWhitelistedPath(String requestURI) {
         }
         // [CASE3] 이외 JWT내에서 오류 발생
         else {
-            resultMsg = "OTHER TOKEN ERROR" + e;
+            resultMsg = "OTHER TOKEN ERROR" + e.getMessage();
         }
+        
         // Custom Error Code 구성
         resultMap.put("status", 403);
         resultMap.put("code", "9999");
         resultMap.put("message", resultMsg);
-        resultMap.put("reason", e.getMessage());
 
         try {
             return om.writeValueAsString(resultMap);

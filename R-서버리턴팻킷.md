@@ -1,4 +1,33 @@
-# 서버 리턴 코드
+# 서버 리턴 팻킷
+
+{
+"date": "2025-03-14T13:39:01.461+09:00",
+"status": 200,
+"error": "OK",
+"code": "E0001",
+"message": "UNAUTHORIZED"
+}
+
+{
+"code": "0000",
+"data": {
+"key": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6IlJPTEVfU19BRE1JTixST0xFX1VTRVIiLCJMT0dJTl9UWVBFIjoiQSIsIkNPUlBfQ09ERSI6IjAwMDAiLCJpYXQiOjE3NDE5MjcyNjUsImV4cCI6MTc0MjUzMjA2NX0.CRq8Vo4BS3wRRY4W0ilV0ISEHVWXrYVcHCG4co5yfJVc6_IfnJLBe3RfWB4ymuKX72laXRToZ-cxZXXlmFoDIQ",
+"corp_code": "0000",
+"man_corp_code": "",
+"login_time_current": "2024-11-25T13:16:57.000+09:00",
+"login_ip": "192.168.100.5",
+"roleid": "SAD",
+"need_change_pwd": false
+}
+}
+
+{
+"date": "2025-03-14T13:41:43.975+09:00",
+"status": 200,
+"error": "OK",
+"code": "E1001",
+"message": "로그인 정보가 올바르지 않습니다."
+}
 
 - acc token 기간만료 --> ref token 확인 후 ( acc 생성 후 전송, (클라이언트 처리는 ???) ), 리프레쉬 token 은 재 생성하지 않음(로그인 요청)
 
